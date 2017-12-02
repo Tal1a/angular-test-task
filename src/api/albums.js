@@ -16,7 +16,7 @@ module.exports = function() {
 	var albums = {},
 		length = 0;
 
-	fs.readFile(path.join(__dirname, '../resources/data/400-id.js'),
+	fs.readFile(path.join(__dirname, '../resources/data/400-id.json'),
 		function(err, data) {
 			if (err) throw err;
 
