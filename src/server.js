@@ -5,6 +5,7 @@ module.exports = function(port) {
 
 	port = typeof port === 'undefined' || !port ? 8000 : port;
 
+	app.use('/node_modules', express.static('./node_modules')); // just to make index.html work
 	app.use('/html', express.static('./src/html'));
 	app.use('/albums', require('./api/albums.js')());
 
