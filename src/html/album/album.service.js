@@ -3,22 +3,22 @@
 angular.module('album').factory('Album', ['$resource',
 	function ($resource) {
 		return $resource('/albums', {}, {
-			'all': {
+			all: {
 				url: '/albums/all',
 				method: 'GET',
 				isArray: true
 			},
-			'delete': {
+			delete: {
 				url: '/albums/delete/:id',
 				method: 'DELETE',
 				params: {id: '@id'}
 			},
-			'update': {
+			update: {
 				url: '/albums/update/:id',
 				method: 'POST',
 				params: {id: '@id'}
 			},
-			'add': {
+			add: {
 				url: '/albums/add',
 				method: 'POST'
 			}
@@ -26,11 +26,9 @@ angular.module('album').factory('Album', ['$resource',
 	}
 ]);
 
-// angular.module('album').component('Example', ['Album', function(album) {
-// 	album.all((albums) => {
+
+// add створити новий альбом з 
+// полями які треба, викликати add і потім переконатися що на сервер пішов відповідний ріквест 
+// з відповідним ріквест боді
+
 //
-// 	});
-// }]);
-
-
-// update , add $save

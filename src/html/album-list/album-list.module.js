@@ -4,6 +4,4 @@
 
 'use strict';
 
-angular.module('albumList', [
-	
-]);
+angular.module('albumList', ['album']);

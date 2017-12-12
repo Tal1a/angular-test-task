@@ -8,26 +8,24 @@ module.exports = function(config) {
 			'node_modules/angular-resource/angular-resource.js',
 			'node_modules/angular-route/angular-route.js',
 			'node_modules/angular-mocks/angular-mocks.js',
-			'**/*.module.js',
-			'*!(.module|.spec).js',
-			'!(node_modules)/**/*!(.module|.spec).js',
-			'**/*.spec.js'
+			'src/html/**/*.module.js',
+			'src/html/**/*!(.module)js',
+			'src/tests/*.spec.js'
 		],
 
-		autoWatch: true,
-		singleRun: false,
+		autoWatch: false,
+		singleRun: true,
 
-		logLevel: config.LOG_DEBUG,
+		logLevel: config.ERROR,
+		port: 9999,
 
 		frameworks: ['jasmine'],
-
-		browsers: ['Chrome', 'Firefox'],
+		browsers: ['PhantomJS'],
+		reporters: ['progress'],
 
 		plugins: [
-			'karma-chrome-launcher',
-			'karma-firefox-launcher',
+			'karma-phantomjs-launcher',
 			'karma-jasmine'
 		]
-
 	});
 };

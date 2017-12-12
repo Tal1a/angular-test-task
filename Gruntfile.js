@@ -15,16 +15,8 @@ module.exports = function(grunt) {
 		karma: {
 			unit: {
 				options: {
-					files: [
-						'src/tests/*.js',
-					],
-					frameworks: ['jasmine'],
-					plugins: ['karma-jasmine', 'karma-phantomjs-launcher'],
-					browsers: ['PhantomJS'],
-					port: 9999,
-					singleRun: true,
-					logLevel: 'ERROR',
-				},
+					configFile: 'karma.conf.js'
+				}
 			}
 		}
 	});
