@@ -52,4 +52,15 @@ describe('Album', function () {
 		expect(albums).toEqual(albumsAll);
 	});
 
+	it('should delete an album from by id `/albums/delete/:id`', function () {
+		$httpBackend.expectDELETE('/albums/delete/1').respond(200, '');
+
+		var album = new Album({id: 1});
+		album.$delete();
+
+		$httpBackend.flush();
+	});
+
+	it('should update an album in the albums array')
+
 });
