@@ -61,6 +61,26 @@ describe('Album', function () {
 		$httpBackend.flush();
 	});
 
-	it('should update an album in the albums array')
+	it('should update an album by id in the albums array', function () {
+		var expectedAlbum = {
+			title: "Empire Burlesque",
+			artist: "Bob Dylan",
+			country: "USA",
+			company: "Columbia",
+			price: 10.90,
+			year: 1985,
+			id: 1
+		};
+
+		$httpBackend.expectPOST('/albums/update/1', expectedAlbum).respond(200, expectedAlbum);
+
+		var album = new Album(expectedAlbum);
+		album.$update({}, function (updatedAlbum) {
+			expect(updatedAlbum).toEqual(expectedAlbum);
+		});
+
+		$httpBackend.flush();
+
+	})
 
 });
